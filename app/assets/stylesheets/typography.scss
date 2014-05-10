@@ -13,3 +13,19 @@
 .flash {
   margin-top: 15px;
 }
+
+
+dl.tabs {
+  height: 58px;
+  border-bottom: 1px solid #E6E6E6;
+
+  dd.active {
+    border-top: 3px solid $primary-color;
+    border-right: 1px solid #E6E6E6;
+    border-left: 1px solid #E6E6E6;
+  }
+
+  dd > a {
+    background: #FFF;
+  }
+}
