@@ -8,4 +8,8 @@ FactoryGirl.define do
       after(:create) { |u| login_as(u, scope: :user) }
     end
   end
+
+  factory :category do
+    sequence(:name) { |n| "Category#{n}" }
+  end
 end

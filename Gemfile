@@ -42,5 +42,5 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '~> 2.6.1', require: false
 end
