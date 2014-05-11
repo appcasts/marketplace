@@ -10,3 +10,12 @@
  "Writer", "Mobile Developer", "Virtual Assistant"].each do |name|
   Category.create(name: name)
 end
+
+File.open("lib/skills.json", "r") do |f|
+  skill_data = JSON.load(f)
+
+  skill_data["skills"].each do |skill|
+    Skill.create(name: skill)
+  end
+end
+

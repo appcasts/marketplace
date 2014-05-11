@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_and_belongs_to_many :categories
+  has_many :skill_levels
+  has_many :skills, through: :skill_levels
 
   enum role: [:user, :vip, :admin]
 
