@@ -1,4 +1,4 @@
-%h1.center-text.main-header Freelancer Profile
+%h1.main-header Freelancer Profile
 
 %dl.tabs{ data: { tab: true, options: "deep_linking: true; scroll_to_content: false" } }
   %dd.active= link_to "Categories & Skills", "#categories_and_skills"
@@ -6,22 +6,17 @@
 
 .tabs-content
   .content.active#categories_and_skills
-    categories
+    = simple_form_for current_user, url: freelance_profile_path do |f|
+      %h2.center-text Categories
+      .button-labels
+        = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b|
+          = b.check_box
+          = b.label class: "small-3 small-centered columns button radius secondary"
+
+      %br
+      %br
+      %p.center-text
+        = f.button :submit, "Save", class: "btn-primary radius"
+
   .content#portfolio
     portfolio
-
-/= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
-/  .row
-/    .small-6.small-centered.columns
-/      = f.input :name, :autofocus => true
-/      = f.input :email, :required => true
-/
-/      .row
-/        .small-6.columns
-/          = f.input :password, :required => true
-/        .small-6.columns
-/          = f.input :password_confirmation, :required => true
-/
-/      = f.button :submit, 'Sign up', :class => 'btn-primary expand radius'
-/
-/      = render "devise/shared/links"

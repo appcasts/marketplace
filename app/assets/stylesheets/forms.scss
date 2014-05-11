@@ -5,3 +5,15 @@ form .input {
 form input.boolean {
   margin-right: 10px;
 }
+
+.button-labels {
+  text-align: center;
+
+  .button { margin: 10px; }
+  input { display: none; }
+
+  input:checked + label, input:checked + label:hover {
+    color: #FFF;
+    background-color: $primary-color;
+  }
+}
