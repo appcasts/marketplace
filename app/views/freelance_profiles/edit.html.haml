@@ -6,17 +6,7 @@
 
 .tabs-content
   .content.active#categories_and_skills
-    = simple_form_for current_user, url: freelance_profile_path do |f|
-      %h2.center-text Categories
-      .button-labels
-        = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b|
-          = b.check_box
-          = b.label class: "small-3 small-centered columns button radius secondary"
-
-      %br
-      %br
-      %p.center-text
-        = f.button :submit, "Save", class: "btn-primary radius"
+    = render "categories_and_skills"
 
   .content#portfolio
     portfolio

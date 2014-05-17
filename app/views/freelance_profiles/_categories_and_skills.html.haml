@@ -1,0 +1,18 @@
+= simple_form_for @user, url: freelance_profile_path do |f|
+  %h2.center-text Categories
+  .button-labels
+    = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b|
+      = b.check_box
+      = b.label class: "small-3 small-centered columns button radius secondary"
+
+  .skills
+    %h2.center-text Skills
+    = f.simple_fields_for :skill_levels, @skill_levels do |s|
+      = render "skill_fields", s: s
+    = skill_search(f)
+
+
+  %br
+  %br
+  %p.center-text
+    = f.button :submit, "Save Categories & Skills", class: "btn-primary radius"

@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :skill_levels
   has_many :skills, through: :skill_levels
 
+  accepts_nested_attributes_for :skill_levels, allow_destroy: true
+
   enum role: [:user, :vip, :admin]
 
   validates :name, presence: true

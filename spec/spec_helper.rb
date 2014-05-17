@@ -11,6 +11,7 @@ require 'shoulda/matchers'
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 include Warden::Test::Helpers
+Capybara.javascript_driver = :webkit
 
 RSpec.configure do |config|
   config.include(EmailSpec::Helpers)

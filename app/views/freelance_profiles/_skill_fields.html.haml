@@ -1,0 +1,22 @@
+.skill-setting.row
+  = s.input :skill_id, as: :hidden, wrapper_html: { class: "hide" },
+                                    input_html: { class: "skill_id" }
+  = s.input :_destroy, as: :hidden, wrapper_html: { class: "hide" },
+                                    input_html: { class: "destroy" }
+
+  .small-4.columns.skill-name
+    = s.object.skill.try(:name)
+
+  .small-5.columns
+    .range-slider.round{ data: { slider: s.object.level || 5, options: "start: 1; end: 10;" } }
+      <span class="range-slider-handle"></span>
+      <span class="range-slider-active-segment"></span>
+      = s.input_field :level, as: :hidden
+
+  .small-2.columns.skill-level
+    %span.level= s.object.level
+    = "/ 10"
+
+  .small-1.columns
+    = link_to "X", "#", class: "button tiny alert radius remove-button"
+

@@ -4,4 +4,5 @@ Marketplace::Application.routes.draw do
   root to: "pages#home"
 
   resource :freelance_profile, only: [:edit, :update]
+  resources :skills, only: [:index]
 end
