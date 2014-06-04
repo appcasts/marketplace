@@ -17,6 +17,7 @@ gem 'haml-rails'
 gem 'pg'
 gem 'pundit'
 gem 'simple_form'
+gem 'filepicker-rails'
 
 group :development do
   gem 'better_errors'
@@ -34,6 +35,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'faker'
   gem 'pry-rails'
+  gem 'dotenv-rails'
 end
 
 group :production do

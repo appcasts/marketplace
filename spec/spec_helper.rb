@@ -10,6 +10,8 @@ require 'shoulda/matchers'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+ActiveRecord::Migration.maintain_test_schema!
+
 include Warden::Test::Helpers
 Capybara.javascript_driver = :webkit
 

@@ -23,6 +23,7 @@ module Marketplace
       g.helper_specs false
     end
 
+    config.filepicker_rails.api_key = ENV["FILEPICKER_KEY"]
     config.assets.precompile += %w( vendor/modernizr )
 
     # Settings in config/environments/* take precedence over those specified here.

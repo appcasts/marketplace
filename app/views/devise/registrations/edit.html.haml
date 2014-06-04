@@ -5,6 +5,14 @@
     = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f|
       = f.input :name, :autofocus => true
       = f.input :email, :required => true
+
+      .row
+        .small-6.columns
+          = image_tag user_picture_url(resource), class: "filepicker-preview"
+        .small-6.columns
+          = f.label :picture_url, "Upload Your Picture:"
+          = f.filepicker_field :picture_url
+
       %fieldset
         = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
         = f.input :password_confirmation, :required => false

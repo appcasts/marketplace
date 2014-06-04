@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <li class="has-dropdown">
     <%= link_to "#" do %>
-      <%= image_tag "placeholder.jpg" %>
+      <%= image_tag user_picture_url(current_user) %>
     <% end %>
     <ul class="dropdown">
       <li><%= link_to 'Account Settings', edit_user_registration_path %></li>
